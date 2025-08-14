@@ -1,16 +1,23 @@
-
+// パッケージのインポート
+// material.dart flutterパッケージが使用可能
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
+// MyApp ルートウィジェット
+// ウィジェットツリー構造をしている
+// StatelessWidget 状態を持たないウィジェット 一度インスタンスしたら状態変化しない
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
+  // ウィジェットツリーを記述して画面を表示
   @override
   Widget build(BuildContext context) {
+    // マテリアルデザイン用のウィジェット
+    // 最初に表示されるウィジェットを指定
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -36,6 +43,8 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// StatefulWidget 状態を持つウィジェット
+// createStateで状態を返す
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -54,9 +63,12 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+// 状態を変更
+// Stateクラスを継承
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  // setState()を呼び出して_counterを加算
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -68,6 +80,8 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  // StatelessWidgetと同じ役割
+  // setState()が呼び出される度に呼び出される
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -76,6 +90,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+
+    // マテリアルデザイン
     return Scaffold(
       appBar: AppBar(
         // TRY THIS: Try changing the color here to a specific color (to
